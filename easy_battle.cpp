@@ -11,7 +11,7 @@ private:
     int hit_point; //体力
     int attack_power; //攻撃力
     int defence_power; //防御力
-public: //コンストラクタ
+public: //コンストラクタ(初期化)
     game_battle(string name,int hp,int attack,int defence){
         hit_point = hp;
         attack_power = attack;
