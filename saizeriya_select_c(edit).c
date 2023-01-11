@@ -99,7 +99,7 @@ int main(){
     if(100 < remaining_amount && remaining_amount <= 400) select_passed = true;
     else continue;
 
-    int koho_number[11];
+    int koho_number[27];
 
     for(int i=0;i<len;i++){
         if(menu_cnt[i] == 0 && remaining_amount == data[i]->value){
@@ -109,8 +109,6 @@ int main(){
             koho_number[i] = 0;
         }
     }
-
-    //動的メモリを使えば,候補になったものの中だけから選べるので、もう少し速くなる？
 
     int restart_count = 0 ;
     for(int i=0;i<len;i++){
@@ -147,12 +145,12 @@ int main(){
 
     printf("%d円で3品を選びました!\n",goal_value);
 
-    printf("%s:%s:%s\n",data[Answer_number_1]->name,data[Answer_number_2]->name,data[Answer_number_3]->name);
+    printf("1品目は%sです.2品目は%sです.3品目は%sです.\n",data[Answer_number_1]->name,data[Answer_number_2]->name,data[Answer_number_3]->name);
 
     end = clock();
 
-    double time = (double)(end - start) / CLOCKS_PER_SEC;
-    printf("実行時間は,%f[s]でした.\n", time);
+    float time = (float)(end - start) / CLOCKS_PER_SEC;
+    //printf("実行時間は,%f[s]でした.\n", time);
 
     return 0;
 
