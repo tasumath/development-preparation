@@ -139,9 +139,20 @@ int main(){
             j--;
         }
     }
+
     
-    srand(time(NULL));
-    int index3 = rand() % (cnt+1);
+    duplicate = true;
+    int index3;
+
+    while(duplicate){
+    //srand(time(NULL));
+    index3 = rand() % (cnt+1);
+    int final_koho_number = koho_number[index3];
+    menu_cnt[final_koho_number]++;
+    if(menu_cnt[final_koho_number] == 2) menu_cnt[final_koho_number]--;
+    else duplicate = false;
+    }
+    
     index3 = decided_array[index3];
     //printf("%d",index3);
     Answer_number_3 = data[index3]->menu_number;
