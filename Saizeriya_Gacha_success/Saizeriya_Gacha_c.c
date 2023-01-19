@@ -71,6 +71,8 @@ int main(){
     int index1 = rand() % len;
     menu_cnt[index1]++;
 
+    printf("一品目:%d:%d",index1,data[index1]->menu_number);
+
     //メニュー名を引っ張ると面倒なので,メニューのキーナンバーを保持する.
     Answer_number_1 = data[index1]->menu_number;
     int Answer_value_1 = data[index1]->value;
@@ -89,6 +91,8 @@ int main(){
     //メニュー名を引っ張ると面倒なので,メニューのキーナンバーを保持する.
     Answer_number_2 = data[index2]->menu_number;
     int Answer_value_2 = data[index2]->value;
+
+    printf("二品目:%d:%d",index2,data[index2]->menu_number);
 
     //printf("value:%d,%d\n",Answer_number_1,Answer_value_1);
     //printf("value:%d,%d\n",Answer_number_2,Answer_value_2);
@@ -146,7 +150,7 @@ int main(){
 
     while(duplicate){
     //srand(time(NULL));
-    index3 = rand() % (cnt+1);
+    index3 = rand() % (cnt - 1);
     int final_koho_number = koho_number[index3];
     menu_cnt[final_koho_number]++;
     if(menu_cnt[final_koho_number] == 2) menu_cnt[final_koho_number]--;
@@ -157,6 +161,8 @@ int main(){
     //printf("%d",index3);
     Answer_number_3 = data[index3]->menu_number;
     //Answer_value_3 = data[index3]->value;
+
+    printf("三品目:%d:%d",index3,data[index3]->menu_number);
 
     hantei = true;
     }
@@ -169,7 +175,7 @@ int main(){
     end = clock();
 
     float time = (float)(end - start) / CLOCKS_PER_SEC;
-    //printf("実行時間は,%f[s]でした.\n", time);
+    printf("実行時間は,%f[s]でした.\n", time);
 
     return 0;
 
