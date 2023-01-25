@@ -83,25 +83,25 @@ void board_change_function_North_direction_White(int Row_number,int Column_numbe
             int Start_Row_number = Row_number;
             int start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
-            for(int i = Start_Row_number - 1; i >= 0; i--){
-                if(board_number[i][start_Column_number] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Row_number - 1; i >= 0; i--) {
+                if(board_number[i][start_Column_number] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[i][start_Column_number] == 1){
-                    next_Black_memory = i;
+                if(board_number[i][start_Column_number] == 1) {
+                    Goal_Position = i;
                     break;
                 }
-                if(i == 0 && board_number[i][start_Column_number] == 0){
-                    next_Black_memory = -1;
+                if(i == 0 && board_number[i][start_Column_number] == 0) {
+                    Goal_Position = -1;
                     break;
                 }
             }
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Row_number; i >= next_Black_memory; i--){
+            if(Goal_Position != -1) {
+                for(int i = Start_Row_number; i >= Goal_Position; i--) {
                     board_number[i][start_Column_number] = 1;
                     board.PlacePiece(i,start_Column_number,White);
                 }
@@ -109,121 +109,121 @@ void board_change_function_North_direction_White(int Row_number,int Column_numbe
 
 }
 
-void board_change_function_East_direction_White(int Row_number,int Column_number){
+void board_change_function_East_direction_White(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
-            for(int i = Start_Column_number + 1; i < 8; i++){
-                if(board_number[Start_Row_number][i] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Column_number + 1; i < 8; i++) {
+                if(board_number[Start_Row_number][i] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[Start_Row_number][i] == 1){
-                    next_Black_memory = i;
+                if(board_number[Start_Row_number][i] == 1) {
+                    Goal_Position = i;
                     break;
                 }
 
-                if(i == 7 && board_number[Start_Row_number][i] == 0){
-                    next_Black_memory = -1;
+                if(i == 7 && board_number[Start_Row_number][i] == 0) {
+                    Goal_Position = -1;
                     break;
                 }
             }
 
-            if(next_Black_memory != -1){
+            if(Goal_Position != -1) {
 
-                for(int i = Start_Column_number + 1; i <= next_Black_memory; i++){
+                for(int i = Start_Column_number + 1; i <= Goal_Position; i++) {
                     board_number[Start_Row_number][i] = 1;
                     board.PlacePiece(Start_Row_number,i,White);
                 }
             }
 }
 
-void board_change_function_South_direction_White(int Row_number,int Column_number){
+void board_change_function_South_direction_White(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
-            for(int i = Start_Row_number + 1; i < 8; i++){
-                if(board_number[i][Start_Column_number] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Row_number + 1; i < 8; i++) {
+                if(board_number[i][Start_Column_number] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[i][Start_Column_number] == 1){
-                    next_Black_memory = i;
+                if(board_number[i][Start_Column_number] == 1) {
+                    Goal_Position = i;
                     break;
                 }
 
-                if(i == 7 && board_number[i][Start_Column_number] == 0){
-                    next_Black_memory = -1;
+                if(i == 7 && board_number[i][Start_Column_number] == 0) {
+                    Goal_Position = -1;
                     break;
                 }
             }
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Row_number + 1; i <= next_Black_memory; i++){
+            if(Goal_Position != -1) {
+                for(int i = Start_Row_number + 1; i <= Goal_Position; i++) {
                     board_number[i][Start_Column_number] = 1;
                     board.PlacePiece(i,Start_Column_number,White);
                 }
             }
 }
 
-void board_change_function_West_direction_White(int Row_number,int Column_number){
+void board_change_function_West_direction_White(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
-            for(int i = Start_Column_number - 1; i >= 0; i--){
-                if(board_number[Start_Row_number][i] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Column_number - 1; i >= 0; i--) {
+                if(board_number[Start_Row_number][i] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[Start_Row_number][i] == 1){
-                    next_Black_memory = i;
+                if(board_number[Start_Row_number][i] == 1) {
+                    Goal_Position = i;
                     break;
                 }
-                if(i == 0 && board_number[Start_Row_number][i] == 0){
-                    next_Black_memory = -1;
+                if(i == 0 && board_number[Start_Row_number][i] == 0) {
+                    Goal_Position = -1;
                     break;
                 }
                 
             }
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Column_number; i >= next_Black_memory; i--){
+            if(Goal_Position != -1){
+                for(int i = Start_Column_number; i >= Goal_Position; i--) {
                     board_number[Start_Row_number][i] = 1;
                     board.PlacePiece(Start_Row_number,i,White);
                 }
             }
 }
 
-void board_change_function_Northeast_direction_White(int Row_number,int Column_number){
+void board_change_function_Northeast_direction_White(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
             Start_Row_number = Row_number - 1;
 
-            for(int i = Start_Column_number + 1; i < 8; i++){
-                if(board_number[Start_Row_number][i] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Column_number + 1; i < 8; i++) {
+                if(board_number[Start_Row_number][i] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[Start_Row_number][i] == 1){
-                    next_Black_memory = i;
+                if(board_number[Start_Row_number][i] == 1) {
+                    Goal_Position = i;
                     break;
                 }
 
-                if((Start_Row_number == 0 || i == 7) && board_number[Start_Row_number][i] == 0){
-                    next_Black_memory = -1;
+                if((Start_Row_number == 0 || i == 7) && board_number[Start_Row_number][i] == 0) {
+                    Goal_Position = -1;
                     break;
                 }
                 Start_Row_number--;
@@ -231,8 +231,8 @@ void board_change_function_Northeast_direction_White(int Row_number,int Column_n
 
             Start_Row_number = Row_number - 1;
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Column_number + 1; i <= next_Black_memory; i++){
+            if(Goal_Position != -1) {
+                for(int i = Start_Column_number + 1; i <= Goal_Position; i++) {
                     board_number[Start_Row_number][i] = 1;
                     board.PlacePiece(Start_Row_number,i,White);
                     Start_Row_number--;
@@ -240,25 +240,26 @@ void board_change_function_Northeast_direction_White(int Row_number,int Column_n
             }
 }
 
-void board_change_function_Northwest_direction_White(int Row_number,int Column_number){
+void board_change_function_Northwest_direction_White(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
+
             Start_Column_number = Column_number - 1;
 
-            for(int i = Start_Row_number - 1; i >= 0; i--){
-                if(board_number[i][Start_Column_number] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Row_number - 1; i >= 0; i--) {
+                if(board_number[i][Start_Column_number] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[i][Start_Column_number] == 1){
-                    next_Black_memory = i;
+                if(board_number[i][Start_Column_number] == 1) {
+                    Goal_Position = i;
                     break;
                 }
-                if((Start_Column_number == 0 || i == 0) && board_number[i][Start_Column_number] == 0){
-                    next_Black_memory = -1;
+                if((Start_Column_number == 0 || i == 0) && board_number[i][Start_Column_number] == 0) {
+                    Goal_Position = -1;
                     break;
                 }
                 Start_Column_number--;
@@ -266,8 +267,8 @@ void board_change_function_Northwest_direction_White(int Row_number,int Column_n
 
             Start_Column_number = Column_number - 1;
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Row_number - 1; i >= next_Black_memory; i--){
+            if(Goal_Position != -1) {
+                for(int i = Start_Row_number - 1; i >= Goal_Position; i--) {
                     board_number[i][Start_Column_number] = 1;
                     board.PlacePiece(i,Start_Column_number,White);
                     Start_Column_number--;
@@ -276,27 +277,27 @@ void board_change_function_Northwest_direction_White(int Row_number,int Column_n
 
 }
 
-void board_change_function_Southeast_direction_White(int Row_number,int Column_number){
+void board_change_function_Southeast_direction_White(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
             Start_Column_number = Column_number + 1;
 
-            for(int i = Start_Row_number + 1; i < 8; i++){
-                if(board_number[i][Start_Column_number] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Row_number + 1; i < 8; i++) {
+                if(board_number[i][Start_Column_number] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[i][Start_Column_number] == 1){
-                    next_Black_memory = i;
+                if(board_number[i][Start_Column_number] == 1) {
+                    Goal_Position = i;
                     break;
                 }
 
-                if((Start_Column_number == 7 || i == 7) && board_number[i][Start_Column_number] == 0){
-                    next_Black_memory = -1;
+                if((Start_Column_number == 7 || i == 7) && board_number[i][Start_Column_number] == 0) {
+                    Goal_Position = -1; 
                     break;
                 }
                 Start_Column_number++;
@@ -304,9 +305,9 @@ void board_change_function_Southeast_direction_White(int Row_number,int Column_n
 
             Start_Column_number = Column_number + 1;
 
-            if(next_Black_memory != -1){
+            if(Goal_Position != -1) {
 
-                for(int i = Start_Row_number + 1; i <= next_Black_memory; i++){
+                for(int i = Start_Row_number + 1; i <= Goal_Position; i++) {
   
                     board_number[i][Start_Column_number] = 1;
                     board.PlacePiece(i,Start_Column_number,White);
@@ -315,26 +316,26 @@ void board_change_function_Southeast_direction_White(int Row_number,int Column_n
             }
 }
 
-void board_change_function_Southwest_direction_White(int Row_number,int Column_number){
+void board_change_function_Southwest_direction_White(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
             Start_Row_number = Row_number + 1;
 
-            for(int i = Start_Column_number - 1; i >= 0; i--){
+            for(int i = Start_Column_number - 1; i >= 0; i--) {
 
-                if(board_number[Start_Row_number][i] == 2){
-                    next_Black_memory = -1;
+                if(board_number[Start_Row_number][i] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[Start_Row_number][i] == 1){
-                    next_Black_memory = i;
+                if(board_number[Start_Row_number][i] == 1) {
+                    Goal_Position = i;
                     break;
                 }
-                if((Start_Row_number == 7 || i == 0) && board_number[Start_Row_number][i] == 0){
-                    next_Black_memory = -1;
+                if((Start_Row_number == 7 || i == 0) && board_number[Start_Row_number][i] == 0) {
+                    Goal_Position = -1;
                     break;
                 }
                 Start_Row_number++;
@@ -343,8 +344,8 @@ void board_change_function_Southwest_direction_White(int Row_number,int Column_n
 
             Start_Row_number = Row_number + 1;
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Column_number - 1; i >= next_Black_memory; i--){
+            if(Goal_Position != -1) {
+                for(int i = Start_Column_number - 1; i >= Goal_Position; i--) {
                     board_number[Start_Row_number][i] = 1;
                     board.PlacePiece(Start_Row_number,i,White);
                     Start_Row_number++;
@@ -357,149 +358,149 @@ void board_change_function_Southwest_direction_White(int Row_number,int Column_n
 
 // Functions that performs changes to the board when a bLack stone is placed
 
-void board_change_function_East_direction_Black(int Row_number,int Column_number){
+void board_change_function_East_direction_Black(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
 
-            for(int i = Start_Column_number + 1; i < 8; i++){
-                if(board_number[Start_Row_number][i] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Column_number + 1; i < 8; i++) {
+                if(board_number[Start_Row_number][i] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[Start_Row_number][i] == 0){
-                    next_Black_memory = i;
+                if(board_number[Start_Row_number][i] == 0) {
+                    Goal_Position = i;
                     break;
                 }
-                if(i == 7 && board_number[Start_Row_number][i] == 1){
-                    next_Black_memory = -1;
+                if(i == 7 && board_number[Start_Row_number][i] == 1) {
+                    Goal_Position = -1;
                     break;
                 }
             }
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Column_number + 1; i <= next_Black_memory; i++){
+            if(Goal_Position != -1){
+                for(int i = Start_Column_number + 1; i <= Goal_Position; i++) {
                     board_number[Start_Row_number][i] = 0;
                     board.PlacePiece(Start_Row_number,i,Black);
                 }
             }
 }
 
-void board_change_function_South_direction_Black(int Row_number,int Column_number){
+void board_change_function_South_direction_Black(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
-            for(int i = Start_Row_number + 1; i < 8; i++){
-                if(board_number[i][Start_Column_number] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Row_number + 1; i < 8; i++) {
+                if(board_number[i][Start_Column_number] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[i][Start_Column_number] == 0){
-                    next_Black_memory = i;
+                if(board_number[i][Start_Column_number] == 0) {
+                    Goal_Position = i;
                     break;
                 }
-                if(i == 7 && board_number[i][Start_Column_number] == 1){
-                    next_Black_memory = -1;
+                if(i == 7 && board_number[i][Start_Column_number] == 1) {
+                    Goal_Position = -1;
                     break;
                 }
             }
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Row_number + 1; i <= next_Black_memory; i++){
+            if(Goal_Position != -1){
+                for(int i = Start_Row_number + 1; i <= Goal_Position; i++) {
                     board_number[i][Start_Column_number ] = 0;
                     board.PlacePiece(i,Start_Column_number ,Black);
                 }
             }
 }
 
-void board_change_function_West_direction_Black(int Row_number,int Column_number){
+void board_change_function_West_direction_Black(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
-            for(int i = Start_Column_number - 1; i >= 0; i--){
-                if(board_number[Start_Row_number][i] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Column_number - 1; i >= 0; i--) {
+                if(board_number[Start_Row_number][i] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[Start_Row_number][i] == 0){
-                    next_Black_memory = i;
+                if(board_number[Start_Row_number][i] == 0) {
+                    Goal_Position = i;
                     break;
                 }
 
-                if(i == 0 && board_number[Start_Row_number][i] == 1){
-                    next_Black_memory = -1;
+                if(i == 0 && board_number[Start_Row_number][i] == 1) {
+                    Goal_Position = -1;
                     break;
                 }
             }
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Column_number; i >= next_Black_memory; i--){
+            if(Goal_Position != -1) {
+                for(int i = Start_Column_number; i >= Goal_Position; i--) {
                     board_number[Start_Row_number][i] = 0;
                     board.PlacePiece(Start_Row_number,i,Black);
                 }
             }
 }
 
-void board_change_function_North_direction_Black(int Row_number,int Column_number){
+void board_change_function_North_direction_Black(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
 
-            for(int i = Start_Row_number - 1; i >= 0; i--){
-                if(board_number[i][Start_Column_number] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Row_number - 1; i >= 0; i--) {
+                if(board_number[i][Start_Column_number] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[i][Start_Column_number] == 0){
-                    next_Black_memory = i;
+                if(board_number[i][Start_Column_number] == 0) {
+                    Goal_Position = i;
                     break;
                 }
 
-                if(i == 0 && board_number[i][Start_Column_number] == 1){
-                    next_Black_memory = -1;
+                if(i == 0 && board_number[i][Start_Column_number] == 1) {
+                    Goal_Position = -1;
                     break;
                 }
             }
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Row_number; i >= next_Black_memory; i--){
+            if(Goal_Position != -1){
+                for(int i = Start_Row_number; i >= Goal_Position; i--) {
                     board_number[i][Start_Column_number] = 0;
                     board.PlacePiece(i,Start_Column_number,Black);
                 }
             }
 }
 
-void board_change_function_Southeast_direction_Black(int Row_number,int Column_number){
+void board_change_function_Southeast_direction_Black(int Row_number,int Column_number) {
 
             int Start_Row_number = Row_number;
             int Start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
             Start_Column_number = Column_number + 1;
 
-            for(int i = Start_Row_number + 1; i < 8; i++){
-                if(board_number[i][Start_Column_number] == 2){
-                    next_Black_memory = -1;
+            for(int i = Start_Row_number + 1; i < 8; i++) {
+                if(board_number[i][Start_Column_number] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[i][Start_Column_number] == 0){
-                    next_Black_memory = i;
+                if(board_number[i][Start_Column_number] == 0) {
+                    Goal_Position = i;
                     break;
                 }
-                if((Start_Column_number == 7 || i == 7) && board_number[i][Start_Column_number] == 1){
-                    next_Black_memory = -1;
+                if((Start_Column_number == 7 || i == 7) && board_number[i][Start_Column_number] == 1) {
+                    Goal_Position = -1;
                     break;
                 }
                 Start_Column_number++;
@@ -507,8 +508,8 @@ void board_change_function_Southeast_direction_Black(int Row_number,int Column_n
 
             Start_Column_number = Column_number + 1;
 
-            if(next_Black_memory != -1){
-                for(int i = Start_Row_number + 1; i <= next_Black_memory; i++){
+            if(Goal_Position != -1){
+                for(int i = Start_Row_number + 1; i <= Goal_Position; i++) {
                     board_number[i][Start_Column_number] = 0;
                     board.PlacePiece(i,Start_Column_number,Black);
                     Start_Column_number++;
@@ -516,26 +517,26 @@ void board_change_function_Southeast_direction_Black(int Row_number,int Column_n
             }
 }
 
-void board_change_function_Southwest_direction_Black(int Row_number,int Column_number){
+void board_change_function_Southwest_direction_Black(int Row_number,int Column_number) {
 
             int start_Row_number = Row_number;
             int start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
 
             start_Row_number = Row_number + 1;
 
-            for(int i = start_Column_number - 1; i >= 0; i--){
-                if(board_number[start_Row_number][i] == 2){
-                    next_Black_memory = -1;
+            for(int i = start_Column_number - 1; i >= 0; i--) {
+                if(board_number[start_Row_number][i] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[start_Row_number][i] == 0){
-                    next_Black_memory = i;
+                if(board_number[start_Row_number][i] == 0) {
+                    Goal_Position = i;
                     break;
                 }
-                if((start_Row_number == 7 || i == 0) && board_number[start_Row_number][i] == 1){
-                    next_Black_memory = -1;
+                if((start_Row_number == 7 || i == 0) && board_number[start_Row_number][i] == 1) {
+                    Goal_Position = -1;
                     break;
                 }
                 start_Row_number++;
@@ -543,8 +544,8 @@ void board_change_function_Southwest_direction_Black(int Row_number,int Column_n
 
             start_Row_number = Row_number + 1;
 
-            if(next_Black_memory != -1){
-                for(int i = start_Column_number - 1; i >= next_Black_memory; i--){
+            if(Goal_Position != -1) {
+                for(int i = start_Column_number - 1; i >= Goal_Position; i--) {
 
                     board_number[start_Row_number][i] = 0;
                     board.PlacePiece(start_Row_number,i,Black);
@@ -554,26 +555,26 @@ void board_change_function_Southwest_direction_Black(int Row_number,int Column_n
 }
 
 
-void board_change_function_Northeast_direction_Black(int Row_number,int Column_number){
+void board_change_function_Northeast_direction_Black(int Row_number,int Column_number) {
 
             int start_Row_number = Row_number;
             int start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
             start_Row_number = Row_number - 1;
 
-            for(int i = start_Column_number + 1; i < 8; i++){
-                if(board_number[start_Row_number][i] == 2){
-                    next_Black_memory = -1;
+            for(int i = start_Column_number + 1; i < 8; i++) {
+                if(board_number[start_Row_number][i] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[start_Row_number][i] == 0){
-                    next_Black_memory = i;
+                if(board_number[start_Row_number][i] == 0) {
+                    Goal_Position= i;
                     break;
                 }
 
-                if((start_Row_number == 0 || i == 7) && board_number[start_Row_number][i] == 1){
-                    next_Black_memory = -1;
+                if((start_Row_number == 0 || i == 7) && board_number[start_Row_number][i] == 1) {
+                    Goal_Position = -1;
                     break;
                 }
                 start_Row_number--;
@@ -581,8 +582,8 @@ void board_change_function_Northeast_direction_Black(int Row_number,int Column_n
 
             start_Row_number = Row_number - 1;
 
-            if(next_Black_memory != -1){
-                for(int i = start_Column_number + 1; i <= next_Black_memory; i++){
+            if(Goal_Position != -1) {
+                for(int i = start_Column_number + 1; i <= Goal_Position; i++) {
                     board_number[start_Row_number][i] = 0;
                     board.PlacePiece(start_Row_number,i,Black);
                     start_Row_number--;
@@ -590,25 +591,25 @@ void board_change_function_Northeast_direction_Black(int Row_number,int Column_n
             }
 }
 
-void board_change_function_Northwest_direction_Black(int Row_number,int Column_number){
+void board_change_function_Northwest_direction_Black(int Row_number,int Column_number) {
 
             int start_Row_number = Row_number;
             int start_Column_number = Column_number;
 
-            int next_Black_memory = -2;
+            int Goal_Position = -2;
             start_Column_number = Column_number - 1;
 
-            for(int i = start_Row_number - 1; i >= 0; i--){
-                if(board_number[i][start_Column_number] == 2){
-                    next_Black_memory = -1;
+            for(int i = start_Row_number - 1; i >= 0; i--) {
+                if(board_number[i][start_Column_number] == 2) {
+                    Goal_Position = -1;
                     break;
                 }
-                if(board_number[i][start_Column_number] == 0){
-                    next_Black_memory = i;
+                if(board_number[i][start_Column_number] == 0) {
+                    Goal_Position = i;
                     break;
                 }
-                if((start_Column_number == 0 || i == 0) && board_number[i][start_Column_number] == 1){
-                    next_Black_memory = -1;
+                if((start_Column_number == 0 || i == 0) && board_number[i][start_Column_number] == 1) {
+                    Goal_Position = -1;
                     break;
                 }
                 start_Column_number--;
@@ -616,8 +617,8 @@ void board_change_function_Northwest_direction_Black(int Row_number,int Column_n
 
             start_Column_number = Column_number - 1;
 
-            if(next_Black_memory != -1){
-                for(int i = start_Row_number - 1; i >= next_Black_memory; i--){
+            if(Goal_Position != -1) {
+                for(int i = start_Row_number - 1; i >= Goal_Position; i--) {
                     board_number[i][start_Column_number] = 0;
                     board.PlacePiece(i,start_Column_number,Black);
                     start_Column_number--;
@@ -631,182 +632,182 @@ int main(){
     init_board_number();
 
     bool battle_pre = true;
-    char row;
-    int board_line_number;
-    int board_row_number;
+    char Column;
+    int Board_Row_Number;
+    int Board_Column_Number;
 
-    while(battle_pre){
+    while(battle_pre) {
 
         board.Print();
         cout<<"白の番です"<<endl;
-        cout<<"どこに置きますか? 列に対応する英文字→";
-        cin>>row;
         cout<<"どこに置きますか? 行に対応する数字→";
-        cin>>board_line_number;
+        cin>>Board_Row_Number;
+        cout<<"どこに置きますか? 列に対応する英文字→";
+        cin>>Column;
         
-        board_line_number = board_line_number - 1;
-        board_row_number = (row - 'A');
+        Board_Row_Number = Board_Row_Number - 1;
+        Board_Column_Number = (Column - 'A');
 
-        board.PlacePiece(board_line_number,board_row_number,White);
-        board_number[board_line_number][board_row_number] = 1;
+        board.PlacePiece(Board_Row_Number,Board_Column_Number,White);
+        board_number[Board_Row_Number][Board_Column_Number] = 1;
 
         //最近接が3,5マスのいずれかの場合,それをカウントする.
         int case_count = 0;
 
         bool upper_left_edge_White = false;
 
-        if(board_line_number == 0 && board_row_number == 0 && case_count == 0){
+        if(Board_Row_Number == 0 && Board_Column_Number == 0 && case_count == 0) {
             upper_left_edge_White = true;
             case_count++;
 
-            board_change_function_East_direction_White(board_line_number,board_row_number);
+            board_change_function_East_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_White(board_line_number,board_row_number);
+            board_change_function_South_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southeast_direction_White(board_line_number,board_row_number);
+            board_change_function_Southeast_direction_White(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool upper_right_edge_White = false;
 
-        if(board_line_number == 0 && board_row_number == 7 && case_count == 0){
+        if(Board_Row_Number == 0 && Board_Column_Number == 7 && case_count == 0) {
             upper_right_edge_White = true;
             case_count++;
 
-            board_change_function_West_direction_White(board_line_number,board_row_number);
+            board_change_function_West_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_White(board_line_number,board_row_number);
+            board_change_function_South_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southwest_direction_White(board_line_number,board_row_number);
+            board_change_function_Southwest_direction_White(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool lower_left_edge_White = false;
 
-        if(board_line_number == 7 && board_row_number == 0 && case_count == 0){
+        if(Board_Row_Number == 7 && Board_Column_Number == 0 && case_count == 0) {
             upper_left_edge_White = true;
             case_count++;
 
-            board_change_function_East_direction_White(board_line_number,board_row_number);
+            board_change_function_East_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_White(board_line_number,board_row_number);
+            board_change_function_North_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northeast_direction_White(board_line_number,board_row_number);
+            board_change_function_Northeast_direction_White(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool lower_right_edge_White = false;
 
-        if(board_line_number == 7 && board_row_number == 7 && case_count == 0){
+        if(Board_Row_Number == 7 && Board_Column_Number == 7 && case_count == 0) {
             lower_right_edge_White = true;
             case_count++;
 
-            board_change_function_West_direction_White(board_line_number,board_row_number);
+            board_change_function_West_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_White(board_line_number,board_row_number);
+            board_change_function_North_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northwest_direction_White(board_line_number,board_row_number);
+            board_change_function_Northwest_direction_White(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool left_side_White = false;
 
-        if(board_line_number != 0 && board_line_number != 7 && board_row_number == 0 && case_count == 0){
+        if(Board_Row_Number != 0 && Board_Row_Number != 7 && Board_Column_Number == 0 && case_count == 0) {
             left_side_White = true;
             case_count++;
 
-            board_change_function_East_direction_White(board_line_number,board_row_number);
+            board_change_function_East_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_White(board_line_number,board_row_number);
+            board_change_function_North_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_White(board_line_number,board_row_number);
+            board_change_function_South_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northeast_direction_White(board_line_number,board_row_number);
+            board_change_function_Northeast_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southeast_direction_White(board_line_number,board_row_number);
+            board_change_function_Southeast_direction_White(Board_Row_Number,Board_Column_Number);
 
         }
 
 
         bool upper_side_White = false;
 
-        if(board_line_number == 0 && board_row_number != 0 && board_row_number != 7 && case_count == 0){
+        if(Board_Row_Number == 0 && Board_Column_Number != 0 && Board_Column_Number != 7 && case_count == 0) {
             upper_side_White = true;
             case_count++;
 
-            board_change_function_East_direction_White(board_line_number,board_row_number);
+            board_change_function_East_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_West_direction_White(board_line_number,board_row_number);
+            board_change_function_West_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_White(board_line_number,board_row_number);
+            board_change_function_South_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southeast_direction_White(board_line_number,board_row_number);
+            board_change_function_Southeast_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southwest_direction_White(board_line_number,board_row_number);
+            board_change_function_Southwest_direction_White(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool right_side_White = false;
 
-        if(board_line_number != 0 && board_line_number != 7 && board_row_number == 7 && case_count == 0){
+        if(Board_Row_Number != 0 && Board_Row_Number != 7 && Board_Column_Number == 7 && case_count == 0) {
             right_side_White = true;
             case_count++;
 
-            board_change_function_West_direction_White(board_line_number,board_row_number);
+            board_change_function_West_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_White(board_line_number,board_row_number);
+            board_change_function_North_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_White(board_line_number,board_row_number);
+            board_change_function_South_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northwest_direction_White(board_line_number,board_row_number);
+            board_change_function_Northwest_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southwest_direction_White(board_line_number,board_row_number);
+            board_change_function_Southwest_direction_White(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool lower_side_White = false;
 
-        if(board_line_number == 7 && board_row_number != 0 && board_row_number != 7 && case_count == 0){
+        if(Board_Row_Number == 7 && Board_Column_Number != 0 && Board_Column_Number != 7 && case_count == 0) {
             lower_side_White = true;
             case_count++;
 
-            board_change_function_West_direction_White(board_line_number,board_row_number);
+            board_change_function_West_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_White(board_line_number,board_row_number);
+            board_change_function_North_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_East_direction_White(board_line_number,board_row_number);
+            board_change_function_East_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northwest_direction_White(board_line_number,board_row_number);
+            board_change_function_Northwest_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northeast_direction_White(board_line_number,board_row_number);
+            board_change_function_Northeast_direction_White(Board_Row_Number,Board_Column_Number);
 
         }
 
         //これまでのケースに該当しない石の置き方には,最近接のマス目が9マスある.
-        if(case_count == 0){
+        if(case_count == 0) {
             case_count++;
 
-            board_change_function_North_direction_White(board_line_number,board_row_number);
+            board_change_function_North_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_East_direction_White(board_line_number,board_row_number);
+            board_change_function_East_direction_White(Board_Row_Number,Board_Column_Number);
             
-            board_change_function_South_direction_White(board_line_number,board_row_number);
+            board_change_function_South_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_West_direction_White(board_line_number,board_row_number);
+            board_change_function_West_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northeast_direction_White(board_line_number,board_row_number);
+            board_change_function_Northeast_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southeast_direction_White(board_line_number,board_row_number);
+            board_change_function_Southeast_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southwest_direction_White(board_line_number,board_row_number);
+            board_change_function_Southwest_direction_White(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northwest_direction_White(board_line_number,board_row_number);
+            board_change_function_Northwest_direction_White(Board_Row_Number,Board_Column_Number);
 
         }
 
         int empty_count = 0;
-        for(int i=0;i<8;i++){
-            for(int j=0;j<8;j++){
+        for(int i = 0; i < 8; i++ ) {
+            for(int j = 0; j < 8; j++) {
                 if(board_number[i][j] == 2) empty_count++;
             }
         }
@@ -820,172 +821,172 @@ int main(){
         /////////////////////////////////////////////////////////////////////////////
 
         cout<<"黒の番です"<<endl;
-        cout<<"どこに置きますか? 列に対応する英文字→";
-        cin>>row;
         cout<<"どこに置きますか? 行に対応する数字→";
-        cin>>board_line_number;
+        cin>>Board_Row_Number;
+        cout<<"どこに置きますか? 列に対応する英文字→";
+        cin>>Column;
 
-        board_row_number = (row - 'A');
-        board_line_number = board_line_number - 1;
+        Board_Row_Number = Board_Row_Number - 1;
+        Board_Column_Number = (Column - 'A');
 
-        board.PlacePiece(board_line_number,board_row_number,Black);
-        board_number[board_line_number][board_row_number] = 0;
+        board.PlacePiece(Board_Row_Number,Board_Column_Number,Black);
+        board_number[Board_Row_Number][Board_Column_Number] = 0;
 
         //最近接が3,5マスのいずれかの場合,それをカウントする.
         case_count = 0;
 
         bool upper_left_edge_Black = false;
 
-        if(board_line_number == 0 && board_row_number == 0 && case_count == 0){
+        if(Board_Row_Number == 0 && Board_Column_Number == 0 && case_count == 0) {
             upper_left_edge_Black = true;
             case_count++;
 
-            board_change_function_East_direction_Black(board_line_number,board_row_number);
+            board_change_function_East_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_Black(board_line_number,board_row_number);
+            board_change_function_South_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southeast_direction_Black(board_line_number,board_row_number);
+            board_change_function_Southeast_direction_Black(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool upper_right_edge_Black = false;
 
-        if(board_line_number == 0 && board_row_number == 7 && case_count == 0){
+        if(Board_Row_Number == 0 && Board_Column_Number == 7 && case_count == 0) {
             upper_right_edge_Black = true;
             case_count++;
 
-            board_change_function_West_direction_Black(board_line_number,board_row_number);
+            board_change_function_West_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_Black(board_line_number,board_row_number);
+            board_change_function_South_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southwest_direction_Black(board_line_number,board_row_number);
+            board_change_function_Southwest_direction_Black(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool lower_left_edge_Black = false;
 
-        if(board_line_number == 7 && board_row_number == 0 && case_count == 0){
+        if(Board_Row_Number == 7 && Board_Column_Number == 0 && case_count == 0) {
             upper_left_edge_Black = true;
             case_count++;
 
-            board_change_function_East_direction_Black(board_line_number,board_row_number);
+            board_change_function_East_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_Black(board_line_number,board_row_number);
+            board_change_function_North_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northeast_direction_Black(board_line_number,board_row_number);
+            board_change_function_Northeast_direction_Black(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool lower_right_edge_Black = false;
 
-        if(board_line_number == 7 && board_row_number == 7 && case_count == 0){
+        if(Board_Row_Number == 7 && Board_Column_Number == 7 && case_count == 0) {
             lower_right_edge_Black = true;
             case_count++;
 
-            board_change_function_West_direction_Black(board_line_number,board_row_number);
+            board_change_function_West_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_Black(board_line_number,board_row_number);
+            board_change_function_North_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northwest_direction_Black(board_line_number,board_row_number);
+            board_change_function_Northwest_direction_Black(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool left_side_Black = false;
 
-        if(board_line_number != 0 && board_line_number != 7 && board_row_number == 0 && case_count == 0){
+        if(Board_Row_Number != 0 && Board_Row_Number != 7 && Board_Column_Number == 0 && case_count == 0) {
             left_side_Black = true;
             case_count++;
 
-            board_change_function_East_direction_Black(board_line_number,board_row_number);
+            board_change_function_East_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_Black(board_line_number,board_row_number);
+            board_change_function_North_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_Black(board_line_number,board_row_number);
+            board_change_function_South_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northeast_direction_Black(board_line_number,board_row_number);
+            board_change_function_Northeast_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southeast_direction_Black(board_line_number,board_row_number);
+            board_change_function_Southeast_direction_Black(Board_Row_Number,Board_Column_Number);
 
         }
 
 
         bool upper_side_Black = false;
 
-        if(board_line_number == 0 && board_row_number != 0 && board_row_number != 7 && case_count == 0){
+        if(Board_Row_Number == 0 && Board_Column_Number != 0 && Board_Column_Number != 7 && case_count == 0) {
             upper_side_Black = true;
             case_count++;
 
-            board_change_function_East_direction_Black(board_line_number,board_row_number);
+            board_change_function_East_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_West_direction_Black(board_line_number,board_row_number);
+            board_change_function_West_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_Black(board_line_number,board_row_number);
+            board_change_function_South_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southeast_direction_Black(board_line_number,board_row_number);
+            board_change_function_Southeast_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southwest_direction_Black(board_line_number,board_row_number);
+            board_change_function_Southwest_direction_Black(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool right_side_Black = false;
 
-        if(board_line_number != 0 && board_line_number != 7 && board_row_number == 7 && case_count == 0){
+        if(Board_Row_Number != 0 && Board_Row_Number != 7 && Board_Column_Number == 7 && case_count == 0) {
             right_side_Black = true;
             case_count++;
 
-            board_change_function_West_direction_Black(board_line_number,board_row_number);
+            board_change_function_West_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_Black(board_line_number,board_row_number);
+            board_change_function_North_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_South_direction_Black(board_line_number,board_row_number);
+            board_change_function_South_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northwest_direction_Black(board_line_number,board_row_number);
+            board_change_function_Northwest_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southwest_direction_Black(board_line_number,board_row_number);
+            board_change_function_Southwest_direction_Black(Board_Row_Number,Board_Column_Number);
 
         }
 
         bool lower_side_Black = false;
 
-        if(board_line_number == 7 && board_row_number != 0 && board_row_number != 7 && case_count == 0){
+        if(Board_Row_Number == 7 && Board_Column_Number != 0 && Board_Column_Number != 7 && case_count == 0) {
             lower_side_Black = true;
             case_count++;
 
-            board_change_function_West_direction_Black(board_line_number,board_row_number);
+            board_change_function_West_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_North_direction_Black(board_line_number,board_row_number);
+            board_change_function_North_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_East_direction_Black(board_line_number,board_row_number);
+            board_change_function_East_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northwest_direction_Black(board_line_number,board_row_number);
+            board_change_function_Northwest_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northeast_direction_Black(board_line_number,board_row_number);
+            board_change_function_Northeast_direction_Black(Board_Row_Number,Board_Column_Number);
 
         }
 
         //これまでのケースに該当しない石の置き方には,最近接のマス目が9マスある.
-        if(case_count == 0){
+        if(case_count == 0) {
             case_count++;
-            board_change_function_North_direction_Black(board_line_number,board_row_number);
+            board_change_function_North_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_East_direction_Black(board_line_number,board_row_number);
+            board_change_function_East_direction_Black(Board_Row_Number,Board_Column_Number);
             
-            board_change_function_South_direction_Black(board_line_number,board_row_number);
+            board_change_function_South_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_West_direction_Black(board_line_number,board_row_number);
+            board_change_function_West_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northeast_direction_Black(board_line_number,board_row_number);
+            board_change_function_Northeast_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southeast_direction_Black(board_line_number,board_row_number);
+            board_change_function_Southeast_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Southwest_direction_Black(board_line_number,board_row_number);
+            board_change_function_Southwest_direction_Black(Board_Row_Number,Board_Column_Number);
 
-            board_change_function_Northwest_direction_Black(board_line_number,board_row_number);
+            board_change_function_Northwest_direction_Black(Board_Row_Number,Board_Column_Number);
 
         }
 
-        for(int i=0;i<8;i++){
-            for(int j=0;j<8;j++){
+        for(int i = 0; i < 8; i++ ) {
+            for(int j = 0; j < 8; j++ ) {
                 if(board_number[i][j] == 2) empty_count++;
             }
         }
@@ -998,8 +999,8 @@ int main(){
     int White_count = 0;
     int Black_count = 0;
 
-    for(int i=0;i<8;i++){
-        for(int j=0;j<8;j++){
+    for(int i = 0; i < 8; i++ ) {
+        for(int j = 0; j < 8; j++ ) {
             if(board_number[i][j] == 1) White_count++;
             else if(board_number[i][j] == 0) Black_count++;
         }
