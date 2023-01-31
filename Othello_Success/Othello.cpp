@@ -1160,10 +1160,6 @@ int main(){
 
                     }
 
-
-            Board_Row_Number = Board_Row_Number - 1;
-            Board_Column_Number = (Column - 'A');
-
             board.PlacePiece(Board_Row_Number,Board_Column_Number,Black);
             board_number[Board_Row_Number][Board_Column_Number] = 0;
 
